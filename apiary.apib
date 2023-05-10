@@ -1,80 +1,2852 @@
 FORMAT: 1A
 HOST: https://polls.apiblueprint.org/
 
-# velvet_github_hosted_api
+# velvet_platform_sync_test
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+This API is for getting the home feed for both mobile and web platforms 
 
-## Questions Collection [/questions]
+## Home Feed with sections [/homeFeed]
+y
+### Get Home Feed [GET]
 
-### List All Questions [GET]
++ Request (application/json)
+    
+    + Headers
+    
+            Accept: application/json
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
+{
+    "meta": {
+        "title": "Home",
+        "description": "Home page",
+        "tags": [
+            "home",
+            "ott",
+            "streaming"
+        ],
+        "image": "https://pbs.twimg.com/media/DaHGY2HWAAANQNB.png",
+        "template": "vel:pagetype:feed"
+    },
+    "sections": [
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+            "id": "08f5c32f606a4c4fa91d1113f7a5a5df",
+            "template": "vel:displaytype:simplehero",
+            "title": null,
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "avatar-the-way-of-water-en",
+                    "title": "Avatar: the way of water",
+                    "subtitle": "Return to Pandora",
+                    "description": "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+                    "contextData": {
+                        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681494121/VEGAS%20DEMO/hero-demo-2_byrd7u.jpg",
+                        "imageTitle": "https://www.themoviedb.org/t/p/original/8moCzlpkwSjUA7IdrQGPh7BrWVZ.png",
+                        "duration": "2h 59m",
+                        "quality": "HD",
+                        "ageRating": "+16",
+                        "contentCategory": "movie",
+                        "percentageMatchScore": 90,
+                        "color": null,
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            },
+                            {
+                                "id": 3,
+                                "name": "Fantasy"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Superheroes"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:player",
+                        "dataUrl": "http://virtuoso-demo-content.s3.amazonaws.com/Steve/steve.m3u8",
+                        "webUrl": "/player/1"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "18f5c32f606a6c4fa91d1113f7a5a5de",
+            "template": "vel:displaytype:rail",
+            "cardTemplate": "vel:cardtype:hcat",
+            "title": null,
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "adventure",
+                    "title": "Adventure",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#EE702D"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "fantasy",
+                    "title": "Fantasy",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#FED141"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "action",
+                    "title": "Action",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#3DB7E4"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "science-fiction",
+                    "title": "Science Fiction",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#99DF4C"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "thriller",
+                    "title": "Thriller",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#908EEF"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "history",
+                    "title": "History",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#66CCCC"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "drama",
+                    "title": "Drama",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#F42751"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "family",
+                    "title": "Family",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#F21572"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                },
+                {
+                    "id": "comedy",
+                    "title": "Comedy",
+                    "subtitle": null,
+                    "description": null,
+                    "contextData": {
+                        "image": null,
+                        "color": "#6c9e9c"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:series:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/friends-en"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "0765c32f606a6c4fa91d1113f7a5a5d4",
+            "template": "vel:displaytype:rail",
+            "cardTemplate": "vel:cardtype:hs",
+            "title": "Coming in Hot",
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "the-rocketship-club",
+                    "title": "The Rocketship Club",
+                    "subtitle": "",
+                    "description": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792849969_2c67586562_z.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "spirited",
+                    "title": "Spirited",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793003900_2f12453cd1_c.jpg",
+                        "heroImage": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681490392/VEGAS%20DEMO/spirited_fgcuvq.webp"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "pearl-en",
+                    "title": "Pearl",
+                    "subtitle": "Follow the lies. Find the truth",
+                    "description": "Trapped on an isolated farm, Pearl must tend to her ailing father under the watch of her mother. Lusting for the glamorous life she's seen in movies, Pearl's temptations and repressions collide.",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792849994_42f710b9c2_c.jpg",
+                        "heroImage": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681490940/VEGAS%20DEMO/pearl_r2soto.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "licorice-pizza-en",
+                    "title": "Licorice Pizza",
+                    "subtitle": null,
+                    "description": "Alana Kane and Gary Valentine grow up, run around, and fall in love in California's San Fernando Valley in the 1970s.",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793003930_f3c9a2ccbc_c.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "judas-and-the-black-messiah-en",
+                    "title": "Judas and The Black Messiah",
+                    "subtitle": "",
+                    "description": "Offered a plea deal by the FBI, William O'Neal infiltrates the Illinois chapter of the Black Panther Party to gather intelligence on Chairman Fred Hampton.",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792052182_e48545de65_c.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "godzilla-vs-kong-en",
+                    "title": "Godzilla vs Kong",
+                    "subtitle": "",
+                    "description": "King Kong is transported out of his containment zone after Godzilla resurfaces and creates mayhem. Humans need his help to reach Hollow Earth and find a way to subdue the king of the monsters.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://live.staticflickr.com/65535/52792850069_ae869585ff_c.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "godzilla-vs-kong-2-en",
+                    "title": "Godzilla vs Kong",
+                    "subtitle": "Say hola to his little friends",
+                    "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793004015_6c807bae97_c.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "glass-onion",
+                    "title": "Glass Onion",
+                    "subtitle": "For honor. For justice. For freedom",
+                    "description": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792850094_a68b44c118_c.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "birds-of-prey-en",
+                    "title": "Birds of Prey",
+                    "subtitle": null,
+                    "description": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792610286_381f725bc6_c.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-batman-en",
+                    "title": "The Batman",
+                    "subtitle": "On the battlefield, one bullet can change everything",
+                    "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793004080_e5609d8b83_z.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "18f5c32f606a6c4fa91d1113f7a5a5de",
+            "template": "vel:displaytype:rail",
+            "cardTemplate": "vel:cardtype:vs",
+            "title": "Vertical Simple",
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "all-quiet-on-the-western-front-en",
+                    "title": "All Quiet on the Western Front",
+                    "subtitle": "",
+                    "description": "War breaks out in Germany in 1914. Paul Bäumer and his classmates quickly enlist in the army to serve their fatherland. No sooner are they drafted than the first images from the battlefield show them the reality of war.",
+                    "contextData": {
+                        "categoryContent": "movie",
+                        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681492215/VEGAS%20DEMO/all-quiet-on-the-western-front_rm8dxh.jpg",
+                        "posterImage": "https://image.tmdb.org/t/p/w300/1yppMeTNQwDrzaUH4dRCx4mr8We.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "all-the-world-is-sleeping-en",
+                    "title": "All the world is sleeping",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "A young mother in New Mexico sinks deeper into addiction while struggling to care for her daughter.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681492389/VEGAS%20DEMO/all_the_world_is_sleeping_mdasx5.jpg",
+                        "heroImage": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681492444/VEGAS%20DEMO/All-the-world-is-sleeping-still_x2u9ef.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-devil-beneath-en",
+                    "title": "The Devil Beneath",
+                    "subtitle": null,
+                    "description": "Inspired by the gripping true story of a man who would do anything for his family—and for freedom. When Peter, an enslaved man, risks his life to escape and return to his family, he embarks on a perilous journey of love and endurance",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681494866/VEGAS%20DEMO/devil-beneath_jrpmbv.jpg",
+                        "posterImage": "https://image.tmdb.org/t/p/w300/jhlc1nsD8nnnGymEFaZ0twMH6M6.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "tar-en",
+                    "title": "Tár",
+                    "subtitle": "Evil Has Reigned For 100 Years...",
+                    "description": "Renowned musician Lydia Tár is days away from recording the symphony that will elevate her career. When all elements seem to conspire against her, Lydia's adopted daughter Petra becomes an integral emotional support for her struggling mother.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681495029/VEGAS%20DEMO/tar-poster_xvuz6c.jpg",
+                        "posterImage": "https://image.tmdb.org/t/p/w300/upeOw04xwv5KGh1bWFM7YoGaShY.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "close-en",
+                    "title": "Close",
+                    "subtitle": "Forever",
+                    "description": "The 13-year-old boys Léo and Rémis have a close friendship at school and in the flower fields where they and their parents pick the harvest for home. When schoolmates shoot a wedge into the relationship, the consequences are fatal.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681495111/VEGAS%20DEMO/close-poster_qqn1ng.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/iREd0rNCjYdf5Ar0vfaW32yrkm.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "sharper-en",
+                    "title": "Sharper",
+                    "subtitle": "",
+                    "description": "Motivations are suspect, and expectations are turned upside down, as a con artist takes on Manhattan billionaires.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://live.staticflickr.com/65535/52793227780_315a86cf3e_m.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/sv1xJUazXeYqALzczSZ3O6nkH75.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "luther-the-fallen-son-en",
+                    "title": "Luther: The Fallen Son",
+                    "subtitle": "",
+                    "description": "A serial killer terrorizes London while disgraced detective John Luther sits behind bars. Haunted by his failure to capture the cyber psychopath who now taunts him, Luther decides to break out of prison to finish the job by any means necessary.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://live.staticflickr.com/65535/52793227700_b6772766ff_m.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/lmf0zzR7ritjOL3qumRh3hfvOFK.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "to-catch-a-killer-en",
+                    "title": "To Catch a Killer",
+                    "subtitle": "",
+                    "description": "A troubled police officer is recruited by the FBI's chief investigator to help profile and track down a disturbed individual terrorizing Baltimore, Maryland.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://live.staticflickr.com/65535/52792832681_8ca663cd71_m.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/eeUNWsdoiOijOZAMaWFDA5Pb1n8.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "john-wich-4-en",
+                    "title": "John Wick 4",
+                    "subtitle": null,
+                    "description": "A serial killer terrorizes London while disgraced detective John Luther sits behind bars. Haunted by his failure to capture the cyber psychopath who now taunts him, Luther decides to break out of prison to finish the job by any means necessary.",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://live.staticflickr.com/65535/52793279488_610a0391b9_m.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/iZvzMpREGiqDQ5eYbx8z70qPgst.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-lazarus-en",
+                    "title": "The Lazarus",
+                    "subtitle": "On the battlefield, one bullet can change everything",
+                    "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://live.staticflickr.com/65535/52793073859_aa029a3f99_m.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/lZOODJzwuQo0etJJyBBZJOSdZcW.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "09f5c32f606a6c4fa91d1113f7a5a5d3",
+            "template": "vel:displaytype:rail",
+            "cardTemplate": "vel:cardtype:hcw",
+            "title": "Continue Watching",
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "glass-onion-en",
+                    "title": "Glass Onion",
+                    "subtitle": "A Knives Out Mystery",
+                    "description": "Tech billionaire Miles Bron invites his friends for a getaway on his private Greek island. When someone turns up dead, Detective Benoit Blanc is put on the case.",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792090077_55be8835f2.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "dune-en",
+                    "title": "Dune",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "Paul Atreides arrives on Arrakis after his father accepts the stewardship of the dangerous planet. However, chaos ensues after a betrayal as forces clash to control melange, a precious resource.",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792888034_beb4ee4757.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-truest-brews-en",
+                    "title": "The Truest Brews",
+                    "subtitle": "Follow the lies. Find the truth",
+                    "description": "It's the final weeks of the most consequential presidential election in history. America is poised to elect either its first female president or its first viable independent candidate. Reporting history as it's made, an idealistic young journalist teams up with her idol, legendary journalist Nick Booker, to uncover a conspiracy that places the fate of the election, and the country, in their hands",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793041610_c55a2905a9.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "run-run-run-en",
+                    "title": "Run, run, run",
+                    "subtitle": "The Chillest show",
+                    "description": "Inspired by the gripping true story of a man who would do anything for his family—and for freedom. When Peter, an enslaved man, risks his life to escape and return to his family, he embarks on a perilous journey of love and endurance",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792647571_51287198af.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-chronicles-of-narnia-tltwtw-en",
+                    "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+                    "subtitle": "Evil Has Reigned For 100 Years...",
+                    "description": "Siblings Lucy, Edmund, Susan and Peter step through a magical wardrobe and find the land of Narnia. There, they discover a charming, once peaceful kingdom that has been plunged into eternal winter by the evil White Witch, Jadis. Aided by the wise and magnificent lion, Aslan, the children lead Narnia into a spectacular, climactic battle to be free of the Witch's glacial powers forever",
+                    "contextData": {
+                        "image": "https://image.tmdb.org/t/p/w400/9iRRfMZbnpgHDdKi2lczGGYZXDo.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "black-panther-wf-en",
+                    "title": "Black Panther",
+                    "subtitle": "Wakanda Forever",
+                    "description": "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda",
+                    "contextData": {
+                        "image": "https://image.tmdb.org/t/p/w400/g0UfxFPjNCBjuv2G0K15Qu6p7zk.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "puss-in-boots-tlw-en",
+                    "title": "Puss in Boots",
+                    "subtitle": "Say hola to his little friends",
+                    "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+                    "contextData": {
+                        "image": "https://image.tmdb.org/t/p/w400/b1Y8SUb12gPHCSSSNlbX4nB3IKy.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "medieval",
+                    "title": "Medieval",
+                    "subtitle": "For honor. For justice. For freedom",
+                    "description": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire",
+                    "contextData": {
+                        "image": "https://image.tmdb.org/t/p/w400/z3U3whVeBXmwQ6o9nj49IlCqp9W.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "emily-the-criminal-en",
+                    "title": "Emily the Criminal",
+                    "subtitle": null,
+                    "description": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences",
+                    "contextData": {
+                        "image": "https://image.tmdb.org/t/p/w400/c6BEspznv2528qaOGzvqtpktn1J.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "sniper-twr-en",
+                    "title": "Sniper: The White Raven",
+                    "subtitle": "On the battlefield, one bullet can change everything",
+                    "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+                    "contextData": {
+                        "image": "https://image.tmdb.org/t/p/w400/AnzvSq0r0U7nGTUuiptvfuhsBBs.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "18f5c32f606a6c4fa91d1113f7a5a5de",
+            "template": "vel:displaytype:rail",
+            "cardTemplate": "vel:cardtype:hc",
+            "title": "Movie reporting",
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "michael-romero-opens-up-about-marvel",
+                    "title": "Michael Romero opens up about Marvel",
+                    "subtitle": "Return to Pandora",
+                    "description": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792068242_c10917471c.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "panorama-of-the-european-film",
+                    "title": "Panorama of the European Film",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792625946_a35f50ae61.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "highways-froze-for-hours-this-weeken",
+                    "title": "Highways froze for hours this weeken",
+                    "subtitle": "Follow the lies. Find the truth",
+                    "description": "It's the final weeks of the most consequential presidential election in history. America is poised to elect either its first female president or its first viable independent candidate. Reporting history as it's made, an idealistic young journalist teams up with her idol, legendary journalist Nick Booker, to uncover a conspiracy that places the fate of the election, and the country, in their hands",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793071428_83b4d35ab1.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "where-are-your-consequences-fan-started-drama-at-the-san-diego-comic-con",
+                    "title": "Where are your consequences?: Fan started drama at the San Diego Comic-Con",
+                    "subtitle": null,
+                    "description": "Inspired by the gripping true story of a man who would do anything for his family—and for freedom. When Peter, an enslaved man, risks his life to escape and return to his family, he embarks on a perilous journey of love and endurance",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792068177_581c73d6a9.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "writer-strike-stops-the-big-company-script-production",
+                    "title": "Writer strike stops the big company script production",
+                    "subtitle": "Evil Has Reigned For 100 Years...",
+                    "description": "Siblings Lucy, Edmund, Susan and Peter step through a magical wardrobe and find the land of Narnia. There, they discover a charming, once peaceful kingdom that has been plunged into eternal winter by the evil White Witch, Jadis. Aided by the wise and magnificent lion, Aslan, the children lead Narnia into a spectacular, climactic battle to be free of the Witch's glacial powers forever",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793019620_0ecfe3ab30.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "ever-wondered-how-the-behind-scenes-are-filmed",
+                    "title": "Ever wondered how the behind scenes are filmed?",
+                    "subtitle": "Forever",
+                    "description": "Queen Ramonda, Shuri, MBaku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792068162_b476088078.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "chloe-alarcon-catches-up-with-hollywoods-star",
+                    "title": "Chloe Alarcon catches up with Hollywood's star",
+                    "subtitle": "Say hola to his little friends",
+                    "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792625861_d628e74713.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "guess-what-actor-let-go-of-their-inhibitions-on-the-guys-podcast-last-monday",
+                    "title": "Guess what actor let go of their inhibitions on 'The Guys Podcast' last Monday",
+                    "subtitle": "For honor. For justice. For freedom",
+                    "description": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792865759_3b7a29e5cd.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "10-most-anticipated-biopics-of-favorite-football-player",
+                    "title": "10 most anticipated biopics of favorite football player",
+                    "subtitle": null,
+                    "description": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793071303_9fdbaeb9d8.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "upcoming-movie-focused-on-the-tour-de-france",
+                    "title": "Upcoming movie focused on the Tour de France",
+                    "subtitle": "On the battlefield, one bullet can change everything",
+                    "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793071248_7fedc3e8f7.jpg",
+                        "duration": "30:45",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "18f5c32f606a6c4fa91d1113f7a5a5de",
+            "template": "vel:displaytype:rail",
+            "cardTemplate": "vel:cardtype:vs",
+            "title": "Featured",
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "black-widow-en",
+                    "title": "Black Widow",
+                    "subtitle": "",
+                    "description": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure",
+                    "contextData": {
+                        "contentCategory": "movie",
+                        "image": "https://live.staticflickr.com/65535/52792633141_ba2907a8d4_n.jpg",
+                        "posterImage": "https://image.tmdb.org/t/p/w300/1yppMeTNQwDrzaUH4dRCx4mr8We.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "code-black-en",
+                    "title": "Code Black",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792872819_d39c7d8022_n.jpg",
+                        "posterImage": "https://image.tmdb.org/t/p/w300/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "dexter-en",
+                    "title": "Dexter",
+                    "subtitle": "Follow the lies. Find the truth",
+                    "description": "It's the final weeks of the most consequential presidential election in history. America is poised to elect either its first female president or its first viable independent candidate. Reporting history as it's made, an idealistic young journalist teams up with her idol, legendary journalist Nick Booker, to uncover a conspiracy that places the fate of the election, and the country, in their hands",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792075657_2161e5bb7e_n.jpg",
+                        "posterImage": "https://image.tmdb.org/t/p/w300/jhlc1nsD8nnnGymEFaZ0twMH6M6.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "hacker-en",
+                    "title": "Hacker",
+                    "subtitle": null,
+                    "description": "Inspired by the gripping true story of a man who would do anything for his family—and for freedom. When Peter, an enslaved man, risks his life to escape and return to his family, he embarks on a perilous journey of love and endurance",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792075627_fb418d694b_n.jpg",
+                        "posterImage": "https://image.tmdb.org/t/p/w300/upeOw04xwv5KGh1bWFM7YoGaShY.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "joker-en",
+                    "title": "Joker",
+                    "subtitle": "Put on a happy face",
+                    "description": "Siblings Lucy, Edmund, Susan and Peter step through a magical wardrobe and find the land of Narnia. There, they discover a charming, once peaceful kingdom that has been plunged into eternal winter by the evil White Witch, Jadis. Aided by the wise and magnificent lion, Aslan, the children lead Narnia into a spectacular, climactic battle to be free of the Witch's glacial powers forever",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792872759_e44361d2a4_n.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/iREd0rNCjYdf5Ar0vfaW32yrkm.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "pirates-caribbean-salazars-en",
+                    "title": "Pirates Caribbean",
+                    "subtitle": "Forever",
+                    "description": "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792075552_c1d41e472c_n.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/sv1xJUazXeYqALzczSZ3O6nkH75.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "puss-in-boots-tlw-en",
+                    "title": "Puss in Boots: The Last Wish",
+                    "subtitle": "Say hola to his little friends",
+                    "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792075542_d436cd81b7_w.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/lmf0zzR7ritjOL3qumRh3hfvOFK.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "spider-man-en",
+                    "title": "Spider-man",
+                    "subtitle": "For honor. For justice. For freedom",
+                    "description": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793026595_73e67080f9_w.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/eeUNWsdoiOijOZAMaWFDA5Pb1n8.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "emily-the-criminal-en",
+                    "title": "Emily the Criminal",
+                    "subtitle": null,
+                    "description": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792075517_ec927aa809_w.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/iZvzMpREGiqDQ5eYbx8z70qPgst.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-batman-en",
+                    "title": "The Batman",
+                    "subtitle": "On the battlefield, one bullet can change everything",
+                    "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793078488_d6523370e6_w.jpg",
+                        "posterImage": "https://www.themoviedb.org/t/p/w300/lZOODJzwuQo0etJJyBBZJOSdZcW.jpg"
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "18f5c32f606a6c4fa91d1113f7a5a5de",
+            "template": "vel:displaytype:rail",
+            "cardTemplate": "vel:cardtype:hcd",
+            "title": "Upcoming Movie",
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "fast-x",
+                    "title": "Fast X",
+                    "subtitle": "Return to Pandora",
+                    "description": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736236_0c1131b6b2_w.jpg",
+                        "duration": "68:45",
+                        "date": "19th May",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "meg-2-the-trench",
+                    "title": "Meg 2: The Trench",
+                    "subtitle": "Follow the lies. Find the truth",
+                    "description": "It's the final weeks of the most consequential presidential election in history. America is poised to elect either its first female president or its first viable independent candidate. Reporting history as it's made, an idealistic young journalist teams up with her idol, legendary journalist Nick Booker, to uncover a conspiracy that places the fate of the election, and the country, in their hands",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793130220_6faa5dfab0_w.jpg",
+                        "duration": "216:45",
+                        "date": "25th July",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "blue-beetle",
+                    "title": "Blue Beetle",
+                    "subtitle": null,
+                    "description": "Inspired by the gripping true story of a man who would do anything for his family—and for freedom. When Peter, an enslaved man, risks his life to escape and return to his family, he embarks on a perilous journey of love and endurance",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792178282_9dccefb665_w.jpg",
+                        "duration": "126:45",
+                        "date": "4th August",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-marvels",
+                    "title": "The Marvels",
+                    "subtitle": "Evil Has Reigned For 100 Years...",
+                    "description": "Siblings Lucy, Edmund, Susan and Peter step through a magical wardrobe and find the land of Narnia. There, they discover a charming, once peaceful kingdom that has been plunged into eternal winter by the evil White Witch, Jadis. Aided by the wise and magnificent lion, Aslan, the children lead Narnia into a spectacular, climactic battle to be free of the Witch's glacial powers forever",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793182018_e5a38ed4f4_w.jpg",
+                        "duration": "98:45",
+                        "date": "10th November",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "oppenheimer",
+                    "title": "Oppenheimer",
+                    "subtitle": "Forever",
+                    "description": "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792178247_a3ae6fa551_w.jpg",
+                        "duration": "87:45",
+                        "date": "21th July",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "asteroid-city",
+                    "title": "Asteroid City",
+                    "subtitle": "Say hola to his little friends",
+                    "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793181988_62fa876977_w.jpg",
+                        "duration": "18:55",
+                        "date": "16th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "mission-impossible-7",
+                    "title": "Mission Impossible 7",
+                    "subtitle": "For honor. For justice. For freedom",
+                    "description": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792178217_0edd13e79f_w.jpg",
+                        "duration": "22:24",
+                        "date": "14th July",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-hunger-games-the-ballad-of-songbirds-&-snakes",
+                    "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+                    "subtitle": null,
+                    "description": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792977324_48a02c853a_w.jpg",
+                        "duration": "25:45",
+                        "date": "17th November",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "the-covenant",
+                    "title": "The Covenant",
+                    "subtitle": "On the battlefield, one bullet can change everything",
+                    "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793130110_e34ca9efe7_w.jpg",
+                        "duration": "26:45",
+                        "date": "21st April",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "08f5c32f606a4c4fa91d1113f7a5a5df",
+            "template": "vel:displaytype:carouselhero",
+            "title": "Full width",
+            "subtitle": null,
+            "description": null,
+            "items": [
+                {
+                    "id": "spiderman-tfotr-en",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792083897_804fcb2beb_b.jpg",
+                        "mobileImage": "https://live.staticflickr.com/65535/52792641576_810dbd5bc0_w.jpg"
+                    }
+                },
+                {
+                    "id": "now-u-see-me",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52793087238_e3bb32b301_b.jpg",
+                        "mobileImage": "https://live.staticflickr.com/65535/52792641516_3188db6253_n.jpg"
+                    }
+                },
+                {
+                    "id": "avng-marvel",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792641556_a96127175e_b.jpg",
+                        "mobileImage": "https://live.staticflickr.com/65535/52792083907_fbed079779_b.jpg"
+                    }
+                }
             ]
         }
+    ]
+}
 
-+ Response 201 (application/json)
 
+
+## Config with endpoints [/config]
+
+### Get Config [GET]
+
++ Request (application/json)
+    
     + Headers
+    
+            Accept: application/json
 
-            Location: /questions/2
++ Response 200 (application/json)
 
-    + Body
+{
+    "routeData": {
+        "login": {
+            "structure": "{baseUrl}/pages/login"
+        },
+        "home": {
+            "structure": "{baseUrl}/homeFeed"
+        },
+        "details": {
+            "data": "{baseUrl}/details/{slug}",
+            "structure": "{baseUrl}/pages/details"
+        }
+    },
+    "apiEndpoints": {
+        "login": "{baseUrl}/firebaseauth/login",
+        "menus": "{baseUrl}/menus",
+        "register": "{baseUrl}/firebaseauth/register",
+        "vocabulary": "{baseUrl}/vocabulary",
+        "emailUpdate": "{baseUrl}/firebaseauth/email/update",
+        "tokenRefresh": "{baseUrl}/firebaseauth/refresh",
+        "verificationSend": "{baseUrl}/firebaseauth/verification/send",
+        "verificationConfirm": "{baseUrl}/firebaseauth/verification/confirm"
+    },
+    "apiEndpointBaseUrl": "https://velvet-backend-poc.azurewebsites.net/api",
+    "defaultQueryParams": "populate=deep&locale={lang}"
+}
 
+
+## Login with endpoints [/pages/login]
+
+### Get Login [GET]
+
++ Request (application/json)
+    
+    + Headers
+    
+            Accept: application/json
+
++ Response 200 (application/json)
+{
+    "meta": {
+        "title": "Login",
+        "description": "Login page",
+        "tags": [
+            "home",
+            "ott",
+            "streaming"
+        ],
+        "image": "https://pbs.twimg.com/media/DaHGY2HWAAANQNB.png",
+        "template": "vel:pagetype:login"
+    },
+    "sections": []
+}
+
+
+## Details [/pages/details]
+
+### Get Details [GET]
+
++ Request (application/json)
+    
+    + Headers
+    
+            Accept: application/json
+
++ Response 200 (application/json)
+
+{
+    "meta": {
+        "title": "Details",
+        "description": "Details page",
+        "tags": [
+            "home",
+            "ott",
+            "streaming"
+        ],
+        "image": "https://pbs.twimg.com/media/DaHGY2HWAAANQNB.png",
+        "template": "vel:pagetype:details"
+    },
+    "sections": []
+}
+
+
+## Details data [/details/dr-strng-en]
+
+### Get Details data [GET]
+
++ Request (application/json)
+    
+    + Headers
+    
+            Accept: application/json
+
++ Response 200 (application/json)
+
+{
+    "id": "dr-strng-en",
+    "title": "Doctor Strange",
+    "subtitle": "The impossibilities are endless.",
+    "description": "After a horrible car accident, brilliant neurosurgeon Stephen Strange must find a way and a cure to healing his hands. His quest brings him to Kamar-Taj in Nepal where he studies",
+    "contextData": {
+        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682516666/All%20platforms%20assets%20VELVET/doctor_2_ltjods.png",
+        "imageTitle": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682516595/All%20platforms%20assets%20VELVET/pngegg_1_st9r6w.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu dolor neque placerat fames sit bibendum elementum. Orci, viverra vitae mauris in. Proin semper cursus iaculis ut nulla adipiscing placerat eget urna. Imperdiet donec dui ut id risus. Convallis est urna ut urna dui malesuada cras donec. Tellus sit lacus mauris tristique. Malesuada lacus, vel pulvinar adipiscing non. Nullam pellentesque facilisis ut enim senectus sed. Habitasse nulla volutpat nibh diam. Fringilla ut tristique elementum nec leo placerat et.",
+        "duration": "2h 59m",
+        "quality": "HD",
+        "ageRating": "+16",
+        "contentCategory": "movie",
+        "director": "Scott Derrickson",
+        "releaseDate": "2022",
+        "genres": [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 2,
+                "name": "Comedy"
+            },
+            {
+                "id": 3,
+                "name": "Fantasy"
+            },
+            {
+                "id": 4,
+                "name": "Superheroes"
             }
+        ]
+    },
+    "callToActions": {
+        "navType": "vel:actions:series:details",
+        "dataUrl": "",
+        "webUrl": "/details/friends-en"
+    },
+    "actors": [
+        {
+            "image": "https://www.themoviedb.org/t/p/w276_and_h350_face/fBEucxECxGLKVHBznO0qHtCGiMO.jpg",
+            "name": "Benedict Cumberbatch",
+            "role": "Doctor Strange"
+        },
+        {
+            "image": "https://www.themoviedb.org/t/p/w276_and_h350_face/kq5DDnqqofoRI0t6ddtRlsJnNPT.jpg",
+            "name": "Chiwetel Ejiofor",
+            "role": "Karl Mordo"
+        },
+        {
+            "image": "https://www.themoviedb.org/t/p/w276_and_h350_face/8w2QyvUke00l0JcNXEXBoCJDqCg.jpg",
+            "name": "Rachel McAdams",
+            "role": "Dr. Christine Palmer"
+        }
+    ],
+    "directors": [
+        {
+            "image": "https://www.themoviedb.org/t/p/w276_and_h350_face/ukmfsl59Isvn9odgzMWBidA3cmt.jpg",
+            "name": "Jason T. Clark",
+            "role": "Art Director"
+        },
+        {
+            "image": "https://www.themoviedb.org/t/p/w276_and_h350_face/ntwPvV4GKGGHO3I7LcHMwhXfsw9.jpg",
+            "name": "Jim Barr",
+            "role": "Art Director"
+        },
+        {
+            "image": "https://www.themoviedb.org/t/p/w276_and_h350_face/seBk12MUK51aUoYX4OW1itfOpJ6.jpg",
+            "name": "Jordan Crockett",
+            "role": "Art Director"
+        }
+    ],
+    "soundtracks": [
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682517632/All%20platforms%20assets%20VELVET/Frame_811576_j7xnzn.png",
+            "name": "Echoes in Rain",
+            "band": "Band"
+        },
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682517692/All%20platforms%20assets%20VELVET/Frame_811576_1_xefljq.png",
+            "name": "Echoes in Rain",
+            "band": "Band"
+        },
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682517632/All%20platforms%20assets%20VELVET/Frame_811576_j7xnzn.png",
+            "name": "Echoes in Rain",
+            "band": "Band"
+        }
+    ],
+    "extras": [
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682518078/All%20platforms%20assets%20VELVET/Video_Image_2_smazpk.png",
+            "title": "LOL",
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        }
+    ],
+    "related": [
+        {
+            "id": "the-rocketship-club",
+            "title": "The Rocketship Club",
+            "subtitle": "",
+            "description": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792849969_2c67586562_z.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "spirited",
+            "title": "Spirited",
+            "subtitle": "They hunt to live. It lives to hunt",
+            "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793003900_2f12453cd1_c.jpg",
+                "heroImage": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681490392/VEGAS%20DEMO/spirited_fgcuvq.webp"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "pearl-en",
+            "title": "Pearl",
+            "subtitle": "Follow the lies. Find the truth",
+            "description": "Trapped on an isolated farm, Pearl must tend to her ailing father under the watch of her mother. Lusting for the glamorous life she's seen in movies, Pearl's temptations and repressions collide.",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792849994_42f710b9c2_c.jpg",
+                "heroImage": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681490940/VEGAS%20DEMO/pearl_r2soto.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "licorice-pizza-en",
+            "title": "Licorice Pizza",
+            "subtitle": null,
+            "description": "Alana Kane and Gary Valentine grow up, run around, and fall in love in California's San Fernando Valley in the 1970s.",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793003930_f3c9a2ccbc_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "judas-and-the-black-messiah-en",
+            "title": "Judas and The Black Messiah",
+            "subtitle": "",
+            "description": "Offered a plea deal by the FBI, William O'Neal infiltrates the Illinois chapter of the Black Panther Party to gather intelligence on Chairman Fred Hampton.",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792052182_e48545de65_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "godzilla-vs-kong-en",
+            "title": "Godzilla vs Kong",
+            "subtitle": "",
+            "description": "King Kong is transported out of his containment zone after Godzilla resurfaces and creates mayhem. Humans need his help to reach Hollow Earth and find a way to subdue the king of the monsters.",
+            "contextData": {
+                "contentCategory": "movie",
+                "image": "https://live.staticflickr.com/65535/52792850069_ae869585ff_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "godzilla-vs-kong-2-en",
+            "title": "Godzilla vs Kong",
+            "subtitle": "Say hola to his little friends",
+            "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793004015_6c807bae97_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "glass-onion",
+            "title": "Glass Onion",
+            "subtitle": "For honor. For justice. For freedom",
+            "description": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792850094_a68b44c118_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "birds-of-prey-en",
+            "title": "Birds of Prey",
+            "subtitle": null,
+            "description": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792610286_381f725bc6_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "the-batman-en",
+            "title": "The Batman",
+            "subtitle": "On the battlefield, one bullet can change everything",
+            "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793004080_e5609d8b83_z.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        }
+    ]
+}
+
+## Menu data [/menu]
+
+### Get Menu data [GET]
+
++ Request (application/json)
+    
+    + Headers
+    
+            Accept: application/json
+
++ Response 200 (application/json)
+
+{
+    "mainMenu": {
+        "content": [
+            {
+                "id": "1",
+                "text": "Home",
+                "icon": "HOME_ICON",
+                "callToActions": {
+                    "navType": "redirect",
+                    "dataUrl": null,
+                    "structureUrl": "{baseUrl}/homeFeed",
+                    "webUrl": "/home"
+                }
+            },
+            {
+                "id": "2",
+                "text": "Movies",
+                "icon": "MOVIES_ICON",
+                "callToActions": {
+                    "navType": "redirect",
+                    "dataUrl": "",
+                    "structureUrl": "",
+                    "webUrl": "/details"
+                }
+            },
+            {
+                "id": "3",
+                "text": "Series",
+                "icon": "SERIES_ICON",
+                "callToActions": {
+                    "navType": "redirect",
+                    "dataUrl": "",
+                    "structureUrl": "",
+                    "webUrl": "/series"
+                }
+            },
+            {
+                "id": "4",
+                "text": "Settings",
+                "icon": "SETTINGS_ICON",
+                "callToActions": {
+                    "navType": "redirect",
+                    "dataUrl": "",
+                    "structureUrl": "",
+                    "webUrl": "/settings"
+                }
+            }
+        ]
+    }
+}
+
+
+## Series Details data [/details/friends-en]
+
+### Get Series Details data [GET]
+
++ Request (application/json)
+    
+    + Headers
+    
+            Accept: application/json
+
++ Response 200 (application/json)
+
+{
+    "id": "friends-en",
+    "title": "Friends",
+    "subtitle": "The impossibilities are endless.",
+    "description": "After a horrible car accident, brilliant neurosurgeon Stephen Strange must find a way and a cure to healing his hands. His quest brings him to Kamar-Taj in Nepal where he studies",
+    "contextData": {
+        "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682516666/All%20platforms%20assets%20VELVET/doctor_2_ltjods.png",
+        "imageTitle": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682516595/All%20platforms%20assets%20VELVET/pngegg_1_st9r6w.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu dolor neque placerat fames sit bibendum elementum. Orci, viverra vitae mauris in. Proin semper cursus iaculis ut nulla adipiscing placerat eget urna. Imperdiet donec dui ut id risus. Convallis est urna ut urna dui malesuada cras donec. Tellus sit lacus mauris tristique. Malesuada lacus, vel pulvinar adipiscing non. Nullam pellentesque facilisis ut enim senectus sed. Habitasse nulla volutpat nibh diam. Fringilla ut tristique elementum nec leo placerat et.",
+        "duration": "2h 59m",
+        "quality": "HD",
+        "ageRating": "+16",
+        "contentCategory": "series",
+        "director": "Scott Derrickson",
+        "releaseDate": "2022",
+        "genres": [
+            {
+                "id": 1,
+                "name": "Action"
+            },
+            {
+                "id": 2,
+                "name": "Comedy"
+            },
+            {
+                "id": 3,
+                "name": "Fantasy"
+            },
+            {
+                "id": 4,
+                "name": "Superheroes"
+            }
+        ]
+    },
+    "callToActions": {
+        "navType": "vel:actions:series:details",
+        "dataUrl": "",
+        "webUrl": "/details/friends-en"
+    },
+    "actors": [
+        {
+            "image": "https://www.themoviedb.org/p/w276_and_h350_face/fBEucxECxGLKVHBznO0qHtCGiMO.jpg",
+            "name": "Benedict Cumberbatch",
+            "role": "Doctor Strange"
+        },
+        {
+            "image": "https://www.themoviedb.org/p/w276_and_h350_face/kq5DDnqqofoRI0t6ddtRlsJnNPT.jpg",
+            "name": "Chiwetel Ejiofor",
+            "role": "Karl Mordo"
+        },
+        {
+            "image": "https://www.themoviedb.org/p/w276_and_h350_face/8w2QyvUke00l0JcNXEXBoCJDqCg.jpg",
+            "name": "Rachel McAdams",
+            "role": "Dr. Christine Palmer"
+        }
+    ],
+    "directors": [
+        {
+            "image": "https://www.themoviedb.org/p/w276_and_h350_face/ukmfsl59Isvn9odgzMWBidA3cmt.jpg",
+            "name": "Jason T. Clark",
+            "role": "Art Director"
+        },
+        {
+            "image": "https://www.themoviedb.org/p/w276_and_h350_face/ntwPvV4GKGGHO3I7LcHMwhXfsw9.jpg",
+            "name": "Jim Barr",
+            "role": "Art Director"
+        },
+        {
+            "image": "https://www.themoviedb.org/p/w276_and_h350_face/seBk12MUK51aUoYX4OW1itfOpJ6.jpg",
+            "name": "Jordan Crockett",
+            "role": "Art Director"
+        }
+    ],
+    "soundtracks": [
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682517632/All%20platforms%20assets%20VELVET/Frame_811576_j7xnzn.png",
+            "name": "Echoes in Rain",
+            "band": "Band"
+        },
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682517692/All%20platforms%20assets%20VELVET/Frame_811576_1_xefljq.png",
+            "name": "Echoes in Rain",
+            "band": "Band"
+        },
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682517632/All%20platforms%20assets%20VELVET/Frame_811576_j7xnzn.png",
+            "name": "Echoes in Rain",
+            "band": "Band"
+        }
+    ],
+    "extras": [
+        {
+            "image": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1682518078/All%20platforms%20assets%20VELVET/Video_Image_2_smazpk.png",
+            "title": "LOL",
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        }
+    ],
+    "related": [
+        {
+            "id": "the-rocketship-club",
+            "title": "The Rocketship Club",
+            "subtitle": "",
+            "description": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792849969_2c67586562_z.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "spirited",
+            "title": "Spirited",
+            "subtitle": "They hunt to live. It lives to hunt",
+            "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793003900_2f12453cd1_c.jpg",
+                "heroImage": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681490392/VEGAS%20DEMO/spirited_fgcuvq.webp"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "pearl-en",
+            "title": "Pearl",
+            "subtitle": "Follow the lies. Find the truth",
+            "description": "Trapped on an isolated farm, Pearl must tend to her ailing father under the watch of her mother. Lusting for the glamorous life she's seen in movies, Pearl's temptations and repressions collide.",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792849994_42f710b9c2_c.jpg",
+                "heroImage": "https://res.cloudinary.com/dmgvqcqqr/image/upload/v1681490940/VEGAS%20DEMO/pearl_r2soto.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "licorice-pizza-en",
+            "title": "Licorice Pizza",
+            "subtitle": null,
+            "description": "Alana Kane and Gary Valentine grow up, run around, and fall in love in California's San Fernando Valley in the 1970s.",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793003930_f3c9a2ccbc_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "judas-and-the-black-messiah-en",
+            "title": "Judas and The Black Messiah",
+            "subtitle": "",
+            "description": "Offered a plea deal by the FBI, William O'Neal infiltrates the Illinois chapter of the Black Panther Party to gather intelligence on Chairman Fred Hampton.",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792052182_e48545de65_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "godzilla-vs-kong-en",
+            "title": "Godzilla vs Kong",
+            "subtitle": "",
+            "description": "King Kong is transported out of his containment zone after Godzilla resurfaces and creates mayhem. Humans need his help to reach Hollow Earth and find a way to subdue the king of the monsters.",
+            "contextData": {
+                "contentCategory": "movie",
+                "image": "https://live.staticflickr.com/65535/52792850069_ae869585ff_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "godzilla-vs-kong-2-en",
+            "title": "Godzilla vs Kong",
+            "subtitle": "Say hola to his little friends",
+            "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793004015_6c807bae97_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "glass-onion",
+            "title": "Glass Onion",
+            "subtitle": "For honor. For justice. For freedom",
+            "description": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792850094_a68b44c118_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "birds-of-prey-en",
+            "title": "Birds of Prey",
+            "subtitle": null,
+            "description": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam that pulls her into the criminal underworld of Los Angeles, ultimately leading to deadly consequences",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52792610286_381f725bc6_c.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        },
+        {
+            "id": "the-batman-en",
+            "title": "The Batman",
+            "subtitle": "On the battlefield, one bullet can change everything",
+            "description": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola’s naive world is collapsing as the militants kill his pregnant wife and burn his home to the ground. Recovered, he makes a cardinal decision and gets enlisted in a sniper company. Having met his wife’s killers, he emotionally breaks down and arranges “sniper terror” for the enemy. He’s saved from a senseless death by his instructor who himself gets mortally wounded. The death of a friend leaves a “scar” and Mykola is ready to sacrifice his life",
+            "contextData": {
+                "image": "https://live.staticflickr.com/65535/52793004080_e5609d8b83_z.jpg"
+            },
+            "callToActions": {
+                "navType": "vel:actions:movie:details",
+                "dataUrl": "",
+                "webUrl": ""
+            }
+        }
+    ],
+    "seasons": [
+        {
+            "name": "Season 1",
+            "episodes": [
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Season 2",
+            "episodes": [
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Season 3",
+            "episodes": [
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Season 4",
+            "episodes": [
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                },
+                {
+                    "id": "indiana-jones-the-dial-of-destiny",
+                    "title": "Indiana Jones & The Dial of Destiny",
+                    "subtitle": "They hunt to live. It lives to hunt",
+                    "description": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal",
+                    "contextData": {
+                        "image": "https://live.staticflickr.com/65535/52792736206_8e8364246e_w.jpg",
+                        "duration": "30:45",
+                        "date": "30th June",
+                        "genres": [
+                            {
+                                "id": 1,
+                                "name": "Action"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Comedy"
+                            }
+                        ]
+                    },
+                    "callToActions": {
+                        "navType": "vel:actions:movie:details",
+                        "dataUrl": "",
+                        "webUrl": "/details/dr-strng-en"
+                    }
+                }
+            ]
+        }
+    ]
+}
